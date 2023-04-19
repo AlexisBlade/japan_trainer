@@ -1,0 +1,224 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-image: linear-gradient(135deg, #333333, #32147A);
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.draw {
+    display: flex;
+    justify-content: center;
+}
+
+.correct-kanji, .kanji, .kanji-display {
+    font-family: 'Noto Sans JP', sans-serif;
+} 
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kanji-container {
+    background-image: linear-gradient(135deg, #673AB7, #5BAFE8);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    overflow: visible;
+}
+
+.kanji-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.kanji {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #000;
+}
+
+.kanji:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    border: 1px solid #673AB7;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.kanji:hover .tooltip {
+    display: inline-block;
+}
+
+.level-title {
+    font-size: 1.5em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #673AB7, #5BAFE8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.kanji-display {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    user-select: none;
+}
+
+.kanji-input {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn {
+    background-color: #673AB7;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #5BAFE8;
+    transform: scale(1.05);
+}
+
+.feedback {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+
+.score-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.quiz-link {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #673AB7;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.quiz-link:hover {
+    background-color: #5BAFE8;
+}
+
+.drawing-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.info-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result-area {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.correct-kanji {
+    font-size: 48px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+button {
+    background-color: #673AB7;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #5BAFE8;
+    transform: scale(1.05);
+}
+
+#check-result, .translation, .result-area {
+    user-select: none;
+}

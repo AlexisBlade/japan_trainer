@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рисование иероглифов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="draw">
+        <div class="container">
+            <div class="drawing-area">
+                <canvas id="drawing-canvas" width="300" height="300"></canvas>
+            </div>
+            <div class="info-area">
+                <h2 class="translation" id="translation"></h2>
+                <button id="check-result" onclick="showResult()">Узнать результат</button>
+            </div>
+            <div class="result-area" id="result-area">
+                <h3>Правильный иероглиф:</h3>
+                <div class="correct-kanji" id="correct-kanji"></div>
+            </div>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="draw.js"></script>
+</body>
+</html>
