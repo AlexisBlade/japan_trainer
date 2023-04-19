@@ -7,21 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="draw">
-        <div class="container">
-            <div class="drawing-area">
-                <canvas id="drawing-canvas" width="300" height="300"></canvas>
-            </div>
-            <div class="info-area">
-                <h2 class="translation" id="translation"></h2>
-                <button id="check-result" onclick="showResult()">Узнать результат</button>
-            </div>
-            <div class="result-area" id="result-area">
-                <h3>Правильный иероглиф:</h3>
-                <div class="correct-kanji" id="correct-kanji"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="quiz.html">Тест</a></li>
+                <li><a href="draw.html">Рисование</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="draw">
+            <div class="container">
+                <div class="level-selection">
+                    <label for="level-select">Выберите уровень:</label>
+                    <select id="level-select">
+                        <option value="n5">N5</option>
+                        <option value="n4">N4</option>
+                        <option value="n3">N3</option>
+                        <option value="n2">N2</option>
+                        <option value="n1">N1</option>
+                    </select>
+                </div>
+                <div class="drawing-area">
+                    <canvas id="drawing-canvas" width="300" height="300"></canvas>
+                </div>
+                <div class="info-area">
+                    <h2 class="translation" id="translation"></h2>
+                    <button id="check-result" onclick="showResult()">Узнать результат</button>
+                </div>
+                <div class="result-area" id="result-area">
+                    <h3>Правильный иероглиф:</h3>
+                    <div class="correct-kanji" id="correct-kanji"></div>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    <footer>
+        <p>© 2023, Cherkasov Studio</p>
+    </footer>
     <script src="data.js"></script>
     <script src="draw.js"></script>
 </body>

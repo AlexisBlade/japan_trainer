@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Изучение японских иероглифов</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="kanji-container" id="n5">
-            <a href="quiz.html" class="quiz-link">Пройти тест по иероглифам</a>
-            <a href="draw.html" class="quiz-link">Рисование</a>
-            <h2 class="level-title">Уровень N5</h2>
-            <div class="kanji-grid"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="quiz.html">Тест</a></li>
+                <li><a href="draw.html">Рисование</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="selection">
+            <label for="level-select">Выберите уровень сложности:</label>
+            <select id="level-select" class="select-level">
+                <option value="n5">N5</option>
+                <option value="n4">N4</option>
+                <option value="n3">N3</option>
+                <option value="n2">N2</option>
+                <option value="n1">N1</option>
+            </select>
         </div>
-        <!-- Добавьте другие уровни (N4, N3, N2, N1) аналогичным образом -->
-    </div>
+        <div class="container">
+            <div class="kanji-container" id="n5">
+                <h2 class="level-title">Уровень N5</h2>
+                <div class="kanji-grid"></div>
+            </div>
+            <!-- Добавьте другие уровни (N4, N3, N2, N1) аналогичным образом -->
+        </div>
+    </main>
+    <footer>
+        <p>© 2023, Cherkasov Studio</p>
+    </footer>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

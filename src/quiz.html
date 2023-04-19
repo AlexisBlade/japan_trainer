@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест по японским иероглифам</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="quiz">
-            <div class="kanji-display"></div>
-            <input class="kanji-input" type="text" placeholder="Введите перевод">
-            <button class="submit-btn">Ответить</button>
-            <div class="feedback"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="quiz.html">Тест</a></li>
+                <li><a href="draw.html">Рисование</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="level-selection">
+                <label for="level-select">Выберите уровень:</label>
+                <select id="level-select">
+                    <option value="n5">N5</option>
+                    <option value="n4">N4</option>
+                    <option value="n3">N3</option>
+                    <option value="n2">N2</option>
+                    <option value="n1">N1</option>
+                </select>
+            </div>
+            <div class="quiz">
+                <div class="kanji-display"></div>
+                <input class="kanji-input" type="text" placeholder="Введите перевод">
+                <button class="submit-btn">Ответить</button>
+                <div class="feedback"></div>
+            </div>
+            <div class="score-container">
+                <span class="score">0</span>
+            </div>
         </div>
-        <div class="score-container">
-            <span class="score">0</span>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>© 2023, Cherkasov Studio</p>
+    </footer>
     <script src="data.js"></script>
     <script src="quiz.js"></script>
 </body>
