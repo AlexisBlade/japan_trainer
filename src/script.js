@@ -14,6 +14,26 @@ function displayKanjiByLevel(level) {
         const kanjiElement = document.createElement('div');
         kanjiElement.textContent = kanji.kanji;
         kanjiElement.classList.add('kanji');
+        
+        // Добавьте атрибуты с информацией об иероглифе
+        kanjiElement.setAttribute('data-meaning', kanji.meaning);
+        kanjiElement.setAttribute('data-furigana', kanji.furigana);
+
+        // Добавьте обработчики событий для подсветки перевода
+        kanjiElement.addEventListener('mouseenter', (event) => {
+            const tooltip = document.createElement('div');
+            tooltip.classList.add('tooltip');
+            tooltip.textContent = event.target.getAttribute('data-meaning');
+            event.target.appendChild(tooltip);
+        });
+
+        kanjiElement.addEventListener('mouseleave', () => {
+            const tooltip = kanjiElement.querySelector('.tooltip');
+            if (tooltip) {
+                kanjiElement.removeChild(tooltip);
+            }
+        });
+
         kanjiGrid.appendChild(kanjiElement);
     });
 }
