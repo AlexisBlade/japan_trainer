@@ -19,24 +19,57 @@ function displayKanjiByLevel(level) {
         kanjiElement.setAttribute('data-meaning', kanji.meaning);
         kanjiElement.setAttribute('data-furigana', kanji.furigana);
 
-        // Добавьте обработчики событий для подсветки перевода
-        kanjiElement.addEventListener('mouseenter', (event) => {
+        // Функция для создания и отображения tooltip
+        function showTooltip(target) {
             const tooltip = document.createElement('div');
             tooltip.classList.add('tooltip');
-            tooltip.textContent = event.target.getAttribute('data-meaning');
-            event.target.appendChild(tooltip);
+            tooltip.textContent = `${target.getAttribute('data-meaning')} (${target.getAttribute('data-furigana')})`;
+            target.appendChild(tooltip);
+        }
+
+        // Функция для удаления tooltip
+        function hideTooltip(target) {
+            const tooltip = target.querySelector('.tooltip');
+            if (tooltip) {
+                target.removeChild(tooltip);
+            }
+        }
+
+        // Обработчики событий для подсветки перевода
+        kanjiElement.addEventListener('mouseenter', (event) => {
+            showTooltip(event.target);
         });
 
         kanjiElement.addEventListener('mouseleave', () => {
+            hideTooltip(kanjiElement);
+        });
+
+        // Обработчик событий для кликов и касаний
+        kanjiElement.addEventListener('mousedown', (event) => {
             const tooltip = kanjiElement.querySelector('.tooltip');
             if (tooltip) {
-                kanjiElement.removeChild(tooltip);
+                hideTooltip(kanjiElement);
+            } else {
+                showTooltip(event.target);
             }
         });
+    
+        kanjiElement.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            const tooltip = kanjiElement.querySelector('.tooltip');
+            if (tooltip) {
+                hideTooltip(kanjiElement);
+            } else {
+                showTooltip(event.target);
+            }
+        }, { passive: false });
+    
 
         kanjiGrid.appendChild(kanjiElement);
     });
 }
+
+
 
 // Изначально отображаем иероглифы уровня N5
 displayKanjiByLevel('n5');
@@ -45,3 +78,22 @@ displayKanjiByLevel('n5');
 levelSelect.addEventListener('change', (event) => {
     displayKanjiByLevel(event.target.value);
 });
+
+
+document.addEventListener('mousedown', (event) => {
+    if (event.target.classList.contains('kanji-grid') || event.target.classList.contains('kanji-container')) {
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach((tooltip) => {
+            tooltip.remove();
+        });
+    }
+});
+
+document.addEventListener('touchstart', (event) => {
+    if (event.target.classList.contains('kanji-grid') || event.target.classList.contains('kanji-container')) {
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach((tooltip) => {
+            tooltip.remove();
+        });
+    }
+}, { passive: true });
