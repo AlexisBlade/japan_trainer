@@ -1,7 +1,27 @@
+@font-face {
+    font-family: 'UD Digi Kyokasho N-B';
+    src: url(/UDDigiKyokashoN-B.ttc);
+}
+
+@font-face {
+    font-family: 'UD Digi Kyokasho N-R';
+    src: url(/UDDigiKyokashoN-R.ttc);
+}
+
+
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+.correct-kanji, .kanji, .kanji-display {
+    font-family: 'UD Digi Kyokasho N-R';
+} 
+
+.tooltip {
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -92,10 +112,6 @@ button:hover {
     display: flex;
     justify-content: center;
 }
-
-.correct-kanji, .kanji, .kanji-display {
-    font-family: 'Noto Sans JP', sans-serif;
-} 
 
 .container {
     display: flex;

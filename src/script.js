@@ -23,7 +23,7 @@ function displayKanjiByLevel(level) {
         function showTooltip(target) {
             const tooltip = document.createElement('div');
             tooltip.classList.add('tooltip');
-            tooltip.textContent = `${target.getAttribute('data-meaning')} (${target.getAttribute('data-furigana')})`;
+            tooltip.textContent = `${target.getAttribute('data-meaning')}`;
             target.appendChild(tooltip);
         }
 
