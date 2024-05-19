@@ -1,3 +1,5 @@
+// Draw Module for Japan 
+
 const levelSelect = document.getElementById('level-select');
 const drawingCanvas = document.getElementById('drawing-canvas');
 const drawingContext = drawingCanvas.getContext('2d');
